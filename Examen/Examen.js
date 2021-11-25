@@ -78,6 +78,91 @@ class palindromo{
 console.log(palindromo.mostrarResultado("“La ruta nos aporto otro paso natural”"));
 console.log("")
 
+//EJERCICIO 5
+console.log("-----------------------------------------")
+console.log("EJERCICIO 5")
+class persona{
+    nombre;
+    edad;
+    constructor(nombre,edad){
+        this.nombre=nombre;
+        this.edad=edad;
+    }
+    obtDetalles(){
+        console.log(this.nombre,this.edad);
+    }
+}
+
+class estudiante extends persona{
+    calificacion;
+    constructor(nombre,edad,calificacion){
+        super(nombre,edad);
+        this.calificacion=calificacion;
+}
+
+    obtDetalles(){
+        console.log(this.nombre,this.edad,this.calificacion);
+
+    }
+}
+
+class profesor extends persona{
+    asignatura
+    nivel
+    constructor(nombre,edad,asignatura,nivel){
+        super(nombre,edad);
+        this.asignatura=asignatura;
+        this.nivel=nivel;
+          
+}
+    obtDetalles(){
+        console.log(this.nombre,this.edad,this.asignatura,this.nivel);
+    }
+}
+
+class grupo {
+    profesor;
+    estudiante =[];
+    promedio;
+   
+    constructor(nombreE, nombreP,edadE, edadP,asignatura,nivel){
+        this.profesor=new profesor(nombreP,edadP,asignatura,nivel);
+        this.estudiante=new estudiante(nombreE,edadE,(Math.random() * 10))
+    }
+    agregarEstudiante(){
+        console.log(this.estudiante);
+    }
+    calificar(){
+        this.estudiante.push=(Math.random() * 10);
+        console.log(this.estudiante);
+    }
+    
+    promedio(){
+        let suma=0;
+        for (let i = 0; i < this.estudiante.length; i++) {
+            suma=suma+this.estudiante[i];
+        }
+        let prom=suma/this.estudiante.length;
+        console.log("promedio es "+prom);
+       
+    }
+
+    obtDetalles(){
+        console.log(this.profesor, this.estudiante);
+    }
+
+
+   
+    
+}
+
+grupoEstudiantes =["Lina", 15, 5];
+grup=new grupo("luis","harold",30,15,"mat","basico");
+grup.agregarEstudiante();
+grup.obtDetalles();
+grup.promedio();
+
+
 
 //BONUS
 console.log("-----------------------------------------")
