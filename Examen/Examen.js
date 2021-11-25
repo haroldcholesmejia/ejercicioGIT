@@ -133,7 +133,6 @@ class grupo {
     }
     
     promedio(){
-        console.log(this.estudiante[0]);
         let suma=0;
         for (var i = 0; i < this.estudiante.calificacion.length; i++) {
             suma=suma+this.estudiante[i];
@@ -148,9 +147,19 @@ class grupo {
 
 }
 
-grup=new grupo("luis","harold",30,15,"mat","basico");
+estudiantes =[];
+estudiantes[0]="luis";
+estudiantes[1]="30";
+estudiantes[2]="Maria";
+estudiantes[3]="25";
+estudiantes[4]="carlos";
+estudiantes[5]="24";
+
+primProfesor= new profesor("harold",35,"mat","basico");
+
+grup=new grupo (estudiantes);
 grup.obtDetalles();
-//grup.promedio();
+grup.promedio();
 
 
 
