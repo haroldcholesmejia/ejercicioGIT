@@ -123,42 +123,32 @@ class profesor extends persona{
 class grupo {
     profesor;
     estudiante =[];
-    promedio;
    
     constructor(nombreE, nombreP,edadE, edadP,asignatura,nivel){
         this.profesor=new profesor(nombreP,edadP,asignatura,nivel);
         this.estudiante=new estudiante(nombreE,edadE,(Math.random() * 10))
     }
-    agregarEstudiante(){
-        console.log(this.estudiante);
-    }
     calificar(){
-        this.estudiante.push=(Math.random() * 10);
-        console.log(this.estudiante);
+        this.estudiante.calificacion=(Math.random() * 10);
     }
     
     promedio(){
+        console.log(this.estudiante[0]);
         let suma=0;
-        for (let i = 0; i < this.estudiante.length; i++) {
+        for (var i = 0; i < this.estudiante.calificacion.length; i++) {
             suma=suma+this.estudiante[i];
         }
         let prom=suma/this.estudiante.length;
-        console.log("promedio es "+prom);
-       
+        console.log("promedio es "+prom);  
     }
 
     obtDetalles(){
         console.log(this.profesor, this.estudiante);
     }
 
-
-   
-    
 }
 
-grupoEstudiantes =["Lina", 15, 5];
 grup=new grupo("luis","harold",30,15,"mat","basico");
-grup.agregarEstudiante();
 grup.obtDetalles();
 //grup.promedio();
 
