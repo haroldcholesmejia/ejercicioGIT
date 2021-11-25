@@ -160,7 +160,7 @@ grupoEstudiantes =["Lina", 15, 5];
 grup=new grupo("luis","harold",30,15,"mat","basico");
 grup.agregarEstudiante();
 grup.obtDetalles();
-grup.promedio();
+//grup.promedio();
 
 
 
